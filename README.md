@@ -2,6 +2,15 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Create new project 
+npm create-react-app react_blog-site
+
+# Install Dependenciesnpm i react-router-dom yup @hookform/resolvers axios react-bootstrap bootstrap react-hook-form
+
+
+# Clone Repository
+git clone https://github.com/abhishekjoshiii/react_blog_site
+
 ## Available Scripts
 
 In the project directory, you can run:

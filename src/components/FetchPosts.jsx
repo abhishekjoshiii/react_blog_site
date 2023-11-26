@@ -1,8 +1,5 @@
 import React from 'react'
 
-
-
-
 export const Postss = ({ data }) => {
     return (
         <div className=' p-1'>{data && data.map((post) => (

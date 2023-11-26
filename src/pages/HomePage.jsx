@@ -19,8 +19,8 @@ const HomePage = () => {
     const indexOfFirstPost = indexOfLastPost - postsPerPage;
     const currentPosts = data.slice(indexOfFirstPost, indexOfLastPost);
 
-    // Change page
     const paginate = pageNumber => setCurrentPage(pageNumber);
+
     return (
         <div>
             <img className='img-fluid p-4' src='slogan.svg' alt=''></img>
