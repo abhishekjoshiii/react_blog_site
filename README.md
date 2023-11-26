@@ -5,7 +5,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 # Create new project 
 npm create-react-app react_blog-site
 
-# Install Dependenciesnpm i react-router-dom yup @hookform/resolvers axios react-bootstrap bootstrap react-hook-form
+# Install Dependencies
+npm i react-router-dom yup @hookform/resolvers axios react-bootstrap bootstrap react-hook-form
 
 
 # Clone Repository
