@@ -2,13 +2,17 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import UpdateForm from '../components/UpdateForm';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Pagination from '../components/Pagination';
+import FetchUpdatedPost from '../components/FetchUpdatedPost';
 
 const ManagePost = () => {
-    const [data, setData] = useState(null);
+    const [data, setData] = useState([]);
     const [updatePost, setUpdatePost] = useState({ id: '', title: '', body: '' });
     const [selectedPostId, setSelectedPostId] = useState('');
     const [isUpdateFormVisible, setIsUpdateFormVisible] = useState(false);
-    const [isCreateFormVisible, setIsCreateFormVisible] = useState(false);
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postsPerPage] = useState(10);
+
 
     useEffect(() => {
         axios.get('https://jsonplaceholder.typicode.com/posts')
@@ -40,6 +44,12 @@ const ManagePost = () => {
         setIsUpdateFormVisible(true);
     };
 
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const currentPosts = data.slice(indexOfFirstPost, indexOfLastPost);
+
+    // Change page
+    const paginate = pageNumber => setCurrentPage(pageNumber);
     return (
         <div className='pt-4'>
 
@@ -48,18 +58,13 @@ const ManagePost = () => {
                 <UpdateForm updatePost={updatePost} setUpdatePost={setUpdatePost} handleUpdate={handleUpdate} />
 
             )}
-            {data && data.slice().reverse().map((post) => (
-                <div className='p-1'>
-                    <div className="card" key={post.id} >
-                        <div className="card-body ">
-                            <h5 className="card-title">{post.title}</h5>
-                            <p className="card-text">{post.body}</p>
-                            <button className='btn btn-danger m-1' onClick={() => handleDelete(post.id)}>Delete</button>
-                            < button className='btn btn-primary m-1' onClick={() => handleUpdateClick(post)}>Update</button>
-                        </div >
-                    </div >
-                </div >
-            ))}
+
+            <FetchUpdatedPost data={currentPosts} handleDelete={handleDelete} handleUpdateClick={handleUpdateClick} />
+            <div>
+                <Pagination
+                    postsPerPage={postsPerPage}
+                    totalPosts={data.length}
+                    paginate={paginate} /></div>
         </div >
     );
 };

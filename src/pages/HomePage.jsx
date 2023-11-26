@@ -24,7 +24,7 @@ const HomePage = () => {
     return (
         <div>
             <img className='img-fluid p-4' src='slogan.svg' alt=''></img>
-            <h2>    <img src='explore.gif' alt='explore'></img> Explore Latest Blogs </h2>
+            <h2><img src='explore.gif' alt='explore'></img> Explore Latest Blogs </h2>
 
             <FetchPosts data={currentPosts} />
             <div>
