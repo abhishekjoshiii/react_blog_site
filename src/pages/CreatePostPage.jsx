@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Form from '../components/Form';
+import CreateForm from '../components/CreateForm';
 import Pagination from '../components/Pagination';
 import FetchPosts from '../components/FetchPosts';
 
@@ -37,7 +37,7 @@ const CreatePostPage = () => {
     const paginate = pageNumber => setCurrentPage(pageNumber);
     return (
         <div>
-            <Form newPost={newPost} setNewPost={setNewPost} handleCreate={handleCreate} />
+            <CreateForm newPost={newPost} setNewPost={setNewPost} handleCreate={handleCreate} />
             <div className='p-4'>
 
                 <h3>Blogs</h3>
