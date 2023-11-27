@@ -1,24 +1,21 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-# Create new project 
-npm create-react-app react_blog-site
-
-# Install Dependencies
-npm i react-router-dom yup @hookform/resolvers axios react-bootstrap bootstrap react-hook-form
+# Blog Post Management Application
+This is a simple blog post management application built with React and react-router-dom v6. It uses the JSONPlaceholder API to fetch, create, update, and delete posts.
 
 
-# Clone Repository
-git clone https://github.com/abhishekjoshiii/react_blog_site
 
-## Available Scripts
+# Clone the repository:
+https://github.com/abhishekjoshiii/react_blog_site
 
-In the project directory, you can run:
+# Navigate to the project directory:
+cd react_blog_site
 
-### `npm start`
+# Install the dependencies:
+npm install or npm i react-router-dom yup @hookform/resolvers axios react-bootstrap bootstrap react-hook-form
 
-Runs the app in the development mode.\
+# Start the application:
+npm start
+
+# Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
